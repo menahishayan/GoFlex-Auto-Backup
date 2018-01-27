@@ -1,16 +1,17 @@
-# Seagate GoFlex - Automated Backup Script
-Script to automatically schedule backups from a Seagate GoFlex device to an external device (USB)
+GoFlex Home - Automated Backup Script
+Copyright 2018. Menahi Shayan & fMoose.
 
-## Introduction
+----------------------------------------------------
+
 Automatically creates regular update-based backup of all data on HDD (SATA: /dev/sda1) to WD (USB: /dev/sdb2)
 
-### Includes:
+Includes:
 - GoFlex Home Public
 - <user>/GoFlex Home Personal
 - <user>/GoFlex Home Backup
 (For all users)
 
-### NOTE:
+NOTE:
 (1) Deletes files that have been deleted on HDD
 (2) No file history or incremental backups
 (3) Backup includes this script package and all contents of (/script)
@@ -18,36 +19,42 @@ Automatically creates regular update-based backup of all data on HDD (SATA: /dev
 (5) Exclude option provided to exclude files/folders from backup
 (6) Backup volume must be NTFS on MBR or GPT
 
-### !!!WARNING:
-IN CASE OF DATA LOSS ON HDD, SCRIPT WILL ERASE THE SAME DATA ON BACKUP DRIVE.
-Delete script or unplug backup drive in case of data loss.
+!!!WARNING: IN CASE OF DATA LOSS ON HDD, SCRIPT WILL ERASE THE SAME DATA ON BACKUP DRIVE.
+	Delete script or unplug backup drive in case of data loss.
 
-## USAGE
-executed automatically by root as per specified schedule in /etc/crontab
+----------------------------------------------------
 
-## LOGGING:
+USAGE: executed automatically by root as per specified schedule in /etc/crontab
+
+----------------------------------------------------
+
+LOGGING:
 
 Logs are created automatically and stored at '/home/0common/scripts/logs/'
 A new logfile is created for each backup session.
 Minimal verbosity. Contains only timestamps of overview actions and console errors (if any)
 
-## BACKUP DIRECTORY STRUCTURE:
+----------------------------------------------------
+
+OUTPUT STRUCTURE:
 
 ..$DRIVE/GoFlex Home Public
 ..$DRIVE/GoFlex Home Personal
-<USER1>
-<USER2>
-.
-.
-<USER*>
+	<USER1>
+	<USER2>
+	.
+	.
+	<USER*>
 ..$DRIVE/GoFlex Home Backup
-<USER1>
-<USER2>
-.
-.
-<USER*>
+	<USER1>
+	<USER2>
+	.
+	.
+	<USER*>
 
-## EXCLUDE LIST:
+----------------------------------------------------
+
+EXCLUDE LIST:
 
 List of files to be excluded from backup process.
 Global list for 'GoFlex Home Public': '/home/0common/scripts/exclude.txt'
@@ -56,7 +63,7 @@ User specific lists for 'GoFlex Home Personal' & 'GoFlex Home Backup':
 '/home/0common/scripts/<user>/exclude-personal.txt'
 '/home/0common/scripts/<user>/exclude-backup.txt'
 
-### USAGE:
+USAGE:
 Enter the file/folder name to be excluded (short path), one in each line, followed by return key
 
 Example:
@@ -65,35 +72,37 @@ Example:
 (2) To exclude GoFlex Home Public/Movies/Princess Diaries/P DIARIES.avi
 "Movies/Princess Diaries/P DIARIES.avi" >> '/home/0common/scripts/exclude.txt'
 
-### NOTE:
+NOTE:
 (1) Script automatically detects the usernames and accesses exclude lists even if users are added/modified/removed.
 (2) Creation of folders '/home/0common/scripts/<user>' is not automated. Any changes to user metadata must be reflected manually in '//GoFlex Home Public/scripts/'
 (3) In case user is deleted, script does not clear user data from backup drive
 (4) Non-existent exclude items will be ignored
 
-### UPDATING EXCLUDE LIST:
+UPDATING EXCLUDE LIST:
 Simply edit the contents of the respective exclude list without having to change any other file related to the backup process
 
-### WARNING: 
-Do not edit exclude list while backup is in progress. Check log file for information on backups.
+WARNING: Do not edit exclude list while backup is in progress. Check log file for information on backups.
 
-## UPDATES:
+----------------------------------------------------
+
+UPDATES:
 
 To update the shell script, simply modify the script located at '/home/0common/scripts/backup.sh'
 
-### !!!WARNING: DO NOT ALLOW EXECUTION WITHOUT CROSS-CHECKING SCRIPT. MAY RESULT IN DATA LOSS OR CORRUPTION.
+!!!WARNING: DO NOT ALLOW EXECUTION WITHOUT CROSS-CHECKING SCRIPT. MAY RESULT IN DATA LOSS OR CORRUPTION.
 
 Preferably create a copy of the script in a sandbox Live Ubuntu environment and execute with test data. Verify outputs, debug errors, and only after all exceptions are handled, proceed to overwrite the script.
 
-### NOTE:
-Keep in mind the time of editing and the time of execution to avoid pre-mature execution and data loss
+NOTE: Keep in mind the time of editing and the time of execution to avoid pre-mature execution and data loss
 
-### WARNING:
-Do not edit the script while backup is in progress. May result in corruption of destination files
+WARNING: Do not edit the script while backup is in progress. May result in corruption of destination files
 
-## PROCEDURE TO CHANGE SCHEDULING:
+----------------------------------------------------
+
+PROCEDURE TO CHANGE SCHEDULING:
 
 [code]
+
 ssh shayan_hipserv2_seagateplug_PGRV-VVFE-DAUF-FQPC@192.168.0.7
 shayan123
 sudo -S
@@ -102,10 +111,10 @@ vi /etc/crontab
 i (insert text)
 00 13 * * * root /bin/bash /home/0common/scripts/backup.sh (runs everyday at 13:00)
 To save - <Esc> <colon>  wq <Return>
+
 [/code]
 
-### NOTE:
-crontab Syntax:
+NOTE: crontab Syntax:
 
 *     *     *   *    *        command to be executed
 -     -     -   -    -
@@ -116,6 +125,7 @@ crontab Syntax:
 |     +----------- hour (0 - 23)
 +------------- min (0 - 59)
 
-## ----------------
+---------------------------------------------------
+
 Help documentation written by Menahi Shayan.
 Last Updated: 2018-01-05 23:39 (GMT+05:30)
