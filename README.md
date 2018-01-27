@@ -32,7 +32,7 @@ A new logfile is created for each backup session.
 Minimal verbosity. Contains only timestamps of overview actions and console errors (if any)
 
 ## BACKUP DIRECTORY STRUCTURE:
-
+`code`
 ..$DRIVE/GoFlex Home Public
 ..$DRIVE/GoFlex Home Personal
 <USER1>
@@ -46,7 +46,7 @@ Minimal verbosity. Contains only timestamps of overview actions and console erro
 .
 .
 <USER*>
-
+`code`
 ## EXCLUDE LIST:
 
 List of files to be excluded from backup process.
@@ -93,7 +93,7 @@ Do not edit the script while backup is in progress. May result in corruption of 
 
 ## PROCEDURE TO CHANGE SCHEDULING:
 
-[code]
+```bash
 ssh shayan_hipserv2_seagateplug_PGRV-VVFE-DAUF-FQPC@192.168.0.7
 shayan123
 sudo -S
@@ -102,11 +102,11 @@ vi /etc/crontab
 i (insert text)
 00 13 * * * root /bin/bash /home/0common/scripts/backup.sh (runs everyday at 13:00)
 To save - <Esc> <colon>  wq <Return>
-[/code]
+```
 
 ### NOTE:
 crontab Syntax:
-
+`code`
 *     *     *   *    *        command to be executed
 -     -     -   -    -
 |     |     |   |    |
@@ -115,7 +115,8 @@ crontab Syntax:
 |     |     +--------- day of        month (1 - 31)
 |     +----------- hour (0 - 23)
 +------------- min (0 - 59)
+`code`
 
-## ----------------
+----------------
 Help documentation written by Menahi Shayan.
 Last Updated: 2018-01-05 23:39 (GMT+05:30)
