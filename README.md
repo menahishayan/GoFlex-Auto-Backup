@@ -11,12 +11,12 @@ Automatically creates regular update-based backup of all data on HDD (SATA: /dev
 (For all users)
 
 ### NOTE:
-(1) Deletes files that have been deleted on HDD
-(2) No file history or incremental backups
-(3) Backup includes this script package and all contents of (/script)
-(4) No RAID/Backup/diag etc, drive marking or flagging. Backup drive is passive and treated as regular storage.
-(5) Exclude option provided to exclude files/folders from backup
-(6) Backup volume must be NTFS on MBR or GPT
+1. Deletes files that have been deleted on HDD
+2. No file history or incremental backups
+1. Backup includes this script package and all contents of (/script)
+1. No RAID/Backup/diag etc, drive marking or flagging. Backup drive is passive and treated as regular storage.
+1. Exclude option provided to exclude files/folders from backup
+1. Backup volume must be NTFS on MBR or GPT
 
 ### !!!WARNING:
 IN CASE OF DATA LOSS ON HDD, SCRIPT WILL ERASE THE SAME DATA ON BACKUP DRIVE.
@@ -60,16 +60,16 @@ User specific lists for 'GoFlex Home Personal' & 'GoFlex Home Backup':
 Enter the file/folder name to be excluded (short path), one in each line, followed by return key
 
 Example:
-(1) To exclude '/GoFlex Home Public/Movies' from backup
+1. To exclude '/GoFlex Home Public/Movies' from backup
 "Movies" >> '/home/0common/scripts/exclude.txt'
-(2) To exclude GoFlex Home Public/Movies/Princess Diaries/P DIARIES.avi
+2. To exclude GoFlex Home Public/Movies/Princess Diaries/P DIARIES.avi
 "Movies/Princess Diaries/P DIARIES.avi" >> '/home/0common/scripts/exclude.txt'
 
 ### NOTE:
-(1) Script automatically detects the usernames and accesses exclude lists even if users are added/modified/removed.
-(2) Creation of folders '/home/0common/scripts/<user>' is not automated. Any changes to user metadata must be reflected manually in '//GoFlex Home Public/scripts/'
-(3) In case user is deleted, script does not clear user data from backup drive
-(4) Non-existent exclude items will be ignored
+1. Script automatically detects the usernames and accesses exclude lists even if users are added/modified/removed.
+2. Creation of folders '/home/0common/scripts/<user>' is not automated. Any changes to user metadata must be reflected manually in '//GoFlex Home Public/scripts/'
+1. In case user is deleted, script does not clear user data from backup drive
+1. Non-existent exclude items will be ignored
 
 ### UPDATING EXCLUDE LIST:
 Simply edit the contents of the respective exclude list without having to change any other file related to the backup process
@@ -78,11 +78,9 @@ Simply edit the contents of the respective exclude list without having to change
 Do not edit exclude list while backup is in progress. Check log file for information on backups.
 
 ## UPDATES:
-
 To update the shell script, simply modify the script located at '/home/0common/scripts/backup.sh'
 
 ### !!!WARNING: DO NOT ALLOW EXECUTION WITHOUT CROSS-CHECKING SCRIPT. MAY RESULT IN DATA LOSS OR CORRUPTION.
-
 Preferably create a copy of the script in a sandbox Live Ubuntu environment and execute with test data. Verify outputs, debug errors, and only after all exceptions are handled, proceed to overwrite the script.
 
 ### NOTE:
@@ -106,16 +104,18 @@ i #(insert text)
 
 ### NOTE:
 crontab Syntax:
-
->*     *     *   *    *        command to be executed
->-     -     -   -    -
->|     |     |   |    |
->|     |     |   |    +----- day of week (0 - 6) (Sunday=0)
->|     |     |   +------- month (1 - 12)
->|     |     +--------- day of        month (1 - 31)
->|     +----------- hour (0 - 23)
->+------------- min (0 - 59)
-
+<dl>
+  <dd>
+*     *     *   *    *        command to be executed
+-     -     -   -    -
+|     |     |   |    |
+|     |     |   |    +----- day of week (0 - 6) (Sunday=0)
+|     |     |   +------- month (1 - 12)
+|     |     +--------- day of        month (1 - 31)
+|     +----------- hour (0 - 23)
++------------- min (0 - 59)
+  </dd>
+</dl>
 ----------------
 Help documentation written by Menahi Shayan.
 Last Updated: 2018-01-05 23:39 (GMT+05:30)
