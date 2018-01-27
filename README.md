@@ -99,23 +99,22 @@ shayan123
 sudo -S
 shayan123
 vi /etc/crontab
-i (insert text)
-00 13 * * * root /bin/bash /home/0common/scripts/backup.sh (runs everyday at 13:00)
-To save - <Esc> <colon>  wq <Return>
+i #(insert text)
+#00 13 * * * root /bin/bash /home/0common/scripts/backup.sh (runs everyday at 13:00)
+#To save - <Esc> <colon>  wq <Return>
 ```
 
 ### NOTE:
 crontab Syntax:
-`code`
-*     *     *   *    *        command to be executed
--     -     -   -    -
-|     |     |   |    |
-|     |     |   |    +----- day of week (0 - 6) (Sunday=0)
-|     |     |   +------- month (1 - 12)
-|     |     +--------- day of        month (1 - 31)
-|     +----------- hour (0 - 23)
-+------------- min (0 - 59)
-`code`
+
+>*     *     *   *    *        command to be executed
+>-     -     -   -    -
+>|     |     |   |    |
+>|     |     |   |    +----- day of week (0 - 6) (Sunday=0)
+>|     |     |   +------- month (1 - 12)
+>|     |     +--------- day of        month (1 - 31)
+>|     +----------- hour (0 - 23)
+>+------------- min (0 - 59)
 
 ----------------
 Help documentation written by Menahi Shayan.
