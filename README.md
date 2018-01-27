@@ -35,19 +35,19 @@ Minimal verbosity. Contains only timestamps of overview actions and console erro
 
 ## BACKUP DIRECTORY STRUCTURE:
 
->..$DRIVE/GoFlex Home Public
->..$DRIVE/GoFlex Home Personal
-..><dl><dd>"<USER1>"</dd></dl>
-..><dl><dd>"<USER2>"</dd></dl>
-..><dl><dd>.</dd></dl>
-..><dl><dd>.</dd></dl>
-..><dl><dd>"<USER*>"</dd></dl>
+> ..$DRIVE/GoFlex Home Public
+> ..$DRIVE/GoFlex Home Personal
+.. > <dl><dd>\<USER1></dd></dl>
+.. > <dl><dd>\<USER2></dd></dl>
+.. > <dl><dd>.</dd></dl>
+.. > <dl><dd>.</dd></dl>
+.. > <dl><dd>\<USER*></dd></dl>
 >..$DRIVE/GoFlex Home Backup
-..><dl><dd>"<USER1>"</dd></dl>
-..><dl><dd>"<USER2>"</dd></dl>
-..><dl><dd>.</dd></dl>
-..><dl><dd>.</dd></dl>
-..><dl><dd>"<USER*>"</dd></dl>
+.. > <dl><dd>\<USER1></dd></dl>
+.. > <dl><dd>\<USER2></dd></dl>
+.. > <dl><dd>.</dd></dl>
+.. > <dl><dd>.</dd></dl>
+.. > <dl><dd>\<USER*></dd></dl>
 
 ## EXCLUDE LIST:
 
