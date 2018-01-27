@@ -10,13 +10,13 @@ Automatically creates regular update-based backup of all data on HDD (SATA: /dev
 - <user>/GoFlex Home Backup
 (For all users)
 
-### NOTE:
-1. Deletes files that have been deleted on HDD
-2. No file history or incremental backups
-1. Backup includes this script package and all contents of (/script)
-1. No RAID/Backup/diag etc, drive marking or flagging. Backup drive is passive and treated as regular storage.
-1. Exclude option provided to exclude files/folders from backup
-1. Backup volume must be NTFS on MBR or GPT
+>### NOTE:
+>1. Deletes files that have been deleted on HDD
+>2. No file history or incremental backups
+>1. Backup includes this script package and all contents of (/script)
+>1. No RAID/Backup/diag etc, drive marking or flagging. Backup drive is passive and treated as regular storage.
+>1. Exclude option provided to exclude files/folders from backup
+>1. Backup volume must be NTFS on MBR or GPT
 
 ### !!!WARNING:
 IN CASE OF DATA LOSS ON HDD, SCRIPT WILL ERASE THE SAME DATA ON BACKUP DRIVE.
@@ -32,7 +32,7 @@ A new logfile is created for each backup session.
 Minimal verbosity. Contains only timestamps of overview actions and console errors (if any)
 
 ## BACKUP DIRECTORY STRUCTURE:
-`code`
+`
 ..$DRIVE/GoFlex Home Public
 ..$DRIVE/GoFlex Home Personal
 <USER1>
@@ -46,15 +46,15 @@ Minimal verbosity. Contains only timestamps of overview actions and console erro
 .
 .
 <USER*>
-`code`
+`
 ## EXCLUDE LIST:
 
 List of files to be excluded from backup process.
-Global list for 'GoFlex Home Public': '/home/0common/scripts/exclude.txt'
+Global list for **GoFlex Home Public**: `/home/0common/scripts/exclude.txt`
 
-User specific lists for 'GoFlex Home Personal' & 'GoFlex Home Backup':
-'/home/0common/scripts/<user>/exclude-personal.txt'
-'/home/0common/scripts/<user>/exclude-backup.txt'
+User specific lists for **GoFlex Home Personal** & **GoFlex Home Backup**:
+`/home/0common/scripts/<user>/exclude-personal.txt`
+`/home/0common/scripts/<user>/exclude-backup.txt`
 
 ### USAGE:
 Enter the file/folder name to be excluded (short path), one in each line, followed by return key
@@ -106,16 +106,18 @@ i #(insert text)
 crontab Syntax:
 <dl>
   <dd>
-*     *     *   *    *        command to be executed
--     -     -   -    -
-|     |     |   |    |
-|     |     |   |    +----- day of week (0 - 6) (Sunday=0)
-|     |     |   +------- month (1 - 12)
-|     |     +--------- day of        month (1 - 31)
-|     +----------- hour (0 - 23)
-+------------- min (0 - 59)
+*     *     *   *    *        command to be executed<br>
+-     -     -   -    -<br>
+|     |     |   |    |<br>
+|     |     |   |    +----- day of week (0 - 6) (Sunday=0)<br>
+|     |     |   +------- month (1 - 12)<br>
+|     |     +--------- day of        month (1 - 31)<br>
+|     +----------- hour (0 - 23)<br>
++------------- min (0 - 59)<br>
   </dd>
 </dl>
+
+
 ----------------
 Help documentation written by Menahi Shayan.
 Last Updated: 2018-01-05 23:39 (GMT+05:30)
