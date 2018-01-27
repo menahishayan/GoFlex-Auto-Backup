@@ -34,33 +34,21 @@ A new logfile is created for each backup session.
 Minimal verbosity. Contains only timestamps of overview actions and console errors (if any)
 
 ## BACKUP DIRECTORY STRUCTURE:
-`
-..$DRIVE/GoFlex Home Public
 
-..$DRIVE/GoFlex Home Personal
+>..$DRIVE/GoFlex Home Public
+>..$DRIVE/GoFlex Home Personal
+..><dl><dd>"<USER1>"</dd></dl>
+..><dl><dd>"<USER2>"</dd></dl>
+..><dl><dd>.</dd></dl>
+..><dl><dd>.</dd></dl>
+..><dl><dd>"<USER*>"</dd></dl>
+>..$DRIVE/GoFlex Home Backup
+..><dl><dd>"<USER1>"</dd></dl>
+..><dl><dd>"<USER2>"</dd></dl>
+..><dl><dd>.</dd></dl>
+..><dl><dd>.</dd></dl>
+..><dl><dd>"<USER*>"</dd></dl>
 
-<USER1>
-
-<USER2>
-
-.
-
-.
-
-<USER*>
-
-..$DRIVE/GoFlex Home Backup
-
-<USER1>
-
-<USER2>
-
-.
-
-.
-
-<USER*>
-`
 ## EXCLUDE LIST:
 
 List of files to be excluded from backup process.
@@ -108,10 +96,10 @@ Do not edit the script while backup is in progress. May result in corruption of 
 ## PROCEDURE TO CHANGE SCHEDULING:
 
 ```bash
-ssh shayan_hipserv2_seagateplug_PGRV-VVFE-DAUF-FQPC@192.168.0.7
-shayan123
+ssh username_hipserv2_seagateplug_PGRV-VVFE-DAUF-FQPC@192.168.0.7
+#password
 sudo -S
-shayan123
+#password
 vi /etc/crontab
 i #(insert text)
 #00 13 * * * root /bin/bash /home/0common/scripts/backup.sh (runs everyday at 13:00)
