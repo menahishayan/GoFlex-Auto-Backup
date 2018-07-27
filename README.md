@@ -18,7 +18,7 @@ Automatically creates regular update-based backup of all data on HDD (SATA: /dev
 >1. Exclude option provided to exclude files/folders from backup
 >1. Backup volume must be NTFS on MBR or GPT
 
-### !!!WARNING:
+### <font color="Red">!!!WARNING:</font>
 IN CASE OF DATA LOSS ON HDD, SCRIPT WILL ERASE THE SAME DATA ON BACKUP DRIVE.
 Delete script or unplug backup drive in case of data loss.
 
@@ -96,7 +96,7 @@ Do not edit the script while backup is in progress. May result in corruption of 
 ## PROCEDURE TO CHANGE SCHEDULING:
 
 ```bash
-ssh username_hipserv2_seagateplug_PGRV-VVFE-DAUF-FQPC@192.168.0.7
+ssh username_hipserv2_seagateplug_SERIAL_NUMBER@ip.address.of.goflex
 #password
 sudo -S
 #password
